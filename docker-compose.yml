@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  db:
+    image: mysql
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: chat-system
+    ports:
+     - "3306:3306"
+  web:
+    build: .
+    volumes:
+      - .:/chat-system
+    ports:
+      - "3000:3000"
+    depends_on: 
+     - db
+     - redis
+  queue:
+    image: rabbitmq:3.8-management
+    ports: 
+      - "15672:15672"
+      - "5672:5672"
+  redis:
+    image: redis
+volumes: 
+  mysql: 
