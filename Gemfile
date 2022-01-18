@@ -20,6 +20,11 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem "bunny", ">= 2.9.2"
 gem "redis", "4.5.1"
+gem 'elasticsearch-model', '~> 7.1'
+gem 'elasticsearch-rails', '~> 7.1'
+gem 'elasticsearch-persistence', '~> 7.1'
+gem 'whenever', require: false
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

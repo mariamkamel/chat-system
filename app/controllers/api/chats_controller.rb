@@ -15,6 +15,17 @@ end
 class Api::ChatsController < ApplicationController
 
     skip_before_action :verify_authenticity_token
+
+    def index
+        expression = "application_token=" + '"'+params[:application_token].to_s+'"'
+        chat = Chat.where(expression)
+        if chat
+           render json: chat, status: 200
+        else 
+            render json: {error: "CHAT NOT FOUND"}, status: 404
+        end
+    end
+
     def create  
         count = REDIS.incr(params[:application_token].to_s)
         newChat  = ChatData.new(count, 0, params[:application_token])
@@ -23,14 +34,6 @@ class Api::ChatsController < ApplicationController
 
     end
 
-    def show
-        chat = Chat.find_by(chat_number: params[:number], application_token: params[:application_token])
-        if chat
-           render json: chat, status: 200
-        else 
-            render json: {error: "CHAT NOT FOUND"}, status: 404
-        end
-    end
 
 
 end

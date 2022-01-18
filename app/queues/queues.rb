@@ -12,6 +12,7 @@ class Queues
         @ch = @conn.create_channel
         @chatQueue  = @ch.queue("create_chat", :auto_delete => true)
         @msgQueue  = @ch.queue("create_msg", :auto_delete => true)
+        @msgUpdateQueue  = @ch.queue("update_msg", :auto_delete => true)
 
         @chat_consumers  = Chat_Consumers.new
         @chat_consumers.create_chat(@chatQueue)
@@ -19,6 +20,8 @@ class Queues
 
         @msg_consumers  = Message_Consumers.new
         @msg_consumers.create_msg(@msgQueue)
+
+        @msg_consumers.update_msg(@msgUpdateQueue)
 
     end
     
