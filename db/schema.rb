@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20220117004806) do
+ActiveRecord::Schema.define(version: 20220118004807) do
 
   create_table "apps", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20220117004806) do
     t.string "application_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["application_token"], name: "index_chats_on_application_token"
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 20220117004806) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "token"
+    t.index ["chat_number", "token"], name: "index_messages_on_chat_number_and_token"
   end
 
 end

@@ -34,21 +34,6 @@ class Message < ApplicationRecord
                
             }
         }
-        # suggest: {
-        #   text: query,
-        #   title: {
-        #     term: {
-        #       size: 1,
-        #       field: :title
-        #     }
-        #   },
-        #   body: {
-        #     term: {
-        #       size: 1,
-        #       field: :body
-        #     }
-        #   }
-        # }
       }
     )
   end
