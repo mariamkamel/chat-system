@@ -175,7 +175,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats",
+					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/2/message",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -185,7 +185,9 @@
 						"api",
 						"applications",
 						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
-						"chats"
+						"chats",
+						"2",
+						"message"
 					]
 				}
 			},
