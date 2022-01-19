@@ -18,17 +18,21 @@ class Message < ApplicationRecord
       {
         query: {
             bool:{
-                must: {
+                must: [{
                     match: {
                         token: token
-                    },
+                    }
+                  },
+                  {
                     match: {
                         body: query
                     },
+                  },
+                  {
                     match: {
                         chat_number: chat_number
                     }
-                },
+                }],
                
             }
         }
