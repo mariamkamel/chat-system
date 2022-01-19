@@ -8,7 +8,10 @@ def create_msg(queue)
           body: newPayload.body,
           token: newPayload.app_token
           )
-      msg.save
+      if msg.save
+        key = newPayload.app_token.to_s + '/' + newPayload.chat_number.to_s
+        REDIS.hset("msgs_count", {key => newPayload.msg_number})
+      end
       end
   end
 

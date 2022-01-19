@@ -7,7 +7,9 @@ class Chat_Consumers
             msgs_count: newPayload.msgs_count,
             application_token: newPayload.app_token
             )
-          chat.save
+         if chat.save
+          REDIS.hset("chat_count", {newPayload.app_token.to_s => newPayload.chat_number} )
+         end
         end
   end
 

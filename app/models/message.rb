@@ -14,8 +14,6 @@ class Message < ApplicationRecord
   end
 
   def self.search(query, chat_number, token)
-    puts query
-    puts chat_number
     __elasticsearch__.search(
       {
         query: {
