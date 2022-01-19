@@ -4,4 +4,4 @@ How to run:
 docker-compose up
 
 postman collection for the apis examples:
-[Postman Collection](./chat-system.postman_collention.json)
+[Postman Collection](./chat-system.postman_collection.json)
