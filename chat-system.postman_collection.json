@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/2/message",
+					"raw": "http://localhost:3000/api/applications",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -19,11 +19,7 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"applications",
-						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
-						"chats",
-						"2",
-						"message"
+						"applications"
 					]
 				}
 			},
@@ -57,7 +53,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/2/message",
+					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/2/messages",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -69,7 +65,7 @@
 						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
 						"chats",
 						"2",
-						"message"
+						"messages"
 					]
 				}
 			},
@@ -91,7 +87,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"query\": \"hi\"\n}",
+					"raw": "{\"msg\":{\n    \"query\": \"hello\"\n}}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -99,7 +95,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/message/hi",
+					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/messages?query=hi",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -111,8 +107,13 @@
 						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
 						"chats",
 						"1",
-						"message",
-						"hi"
+						"messages"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "hi"
+						}
 					]
 				}
 			},
@@ -246,7 +247,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"msg\": {\"body\": \"hi2\"}}",
+					"raw": "{\"msg\": {\"body\": \"hello\"}}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -254,7 +255,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/message/4",
+					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/messages/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -266,7 +267,7 @@
 						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
 						"chats",
 						"1",
-						"message",
+						"messages",
 						"4"
 					]
 				}
