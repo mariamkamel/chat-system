@@ -10,6 +10,7 @@ class Api::ApplicationsController < ApplicationController
       uuid = SecureRandom.uuid
       app = App.new(
           name: app_create_params[:name],
+          chat_count: 0,
           token: uuid
       )
       if app.save

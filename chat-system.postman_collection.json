@@ -6,87 +6,12 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:3000/api/applications",
+			"name": "get all application",
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"app\": {\"name\":\"name\"}}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:3000/api/applications",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"applications"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"app\": {\"name\":\"updated name\"}}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"applications",
-						"aa0f0b0e-6826-45c3-8571-52a212b4b00a"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/message",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "chat_number",
-						"value": "1",
-						"type": "default",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"msg\": {\"body\":\"hi1\"}}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/message",
+					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/2/message",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -97,7 +22,7 @@
 						"applications",
 						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
 						"chats",
-						"1",
+						"2",
 						"message"
 					]
 				}
@@ -105,7 +30,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats",
+			"name": "get all chats in an application",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -127,7 +52,31 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/message/hi",
+			"name": "get all messages in a chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/2/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"applications",
+						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
+						"chats",
+						"2",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search for a message in a chat",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -170,12 +119,21 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/2/message",
+			"name": "create an application",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"app\": {\"name\":\"name\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/2/message",
+					"raw": "http://localhost:3000/api/applications",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -183,18 +141,14 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"applications",
-						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
-						"chats",
-						"2",
-						"message"
+						"applications"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats",
+			"name": "create a chat",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -216,7 +170,77 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/message/4",
+			"name": "create a message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "chat_number",
+						"value": "1",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"msg\": {\"body\":\"hi1\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"applications",
+						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
+						"chats",
+						"1",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update application name",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"app\": {\"name\":\"updated name\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"applications",
+						"aa0f0b0e-6826-45c3-8571-52a212b4b00a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update message body",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -244,30 +268,6 @@
 						"1",
 						"message",
 						"4"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/2/message",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/2/message",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"applications",
-						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
-						"chats",
-						"2",
-						"message"
 					]
 				}
 			},
