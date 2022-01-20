@@ -72,54 +72,6 @@
 			"response": []
 		},
 		{
-			"name": "search for a message in a chat",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "query",
-						"value": "hi",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"msg\":{\n    \"query\": \"hello\"\n}}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/messages?query=hi",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"applications",
-						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
-						"chats",
-						"1",
-						"messages"
-					],
-					"query": [
-						{
-							"key": "query",
-							"value": "hi"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "create an application",
 			"request": {
 				"method": "POST",
@@ -184,7 +136,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"msg\": {\"body\":\"hi1\"}}",
+					"raw": "{\"msg\": {\"body\":\"hi there\"}}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -192,7 +144,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/message",
+					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/messages",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -204,7 +156,7 @@
 						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
 						"chats",
 						"1",
-						"message"
+						"messages"
 					]
 				}
 			},
@@ -269,6 +221,54 @@
 						"1",
 						"messages",
 						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search for a message in a chat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "query",
+						"value": "hi",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/applications/aa0f0b0e-6826-45c3-8571-52a212b4b00a/chats/1/messages?query=hi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"applications",
+						"aa0f0b0e-6826-45c3-8571-52a212b4b00a",
+						"chats",
+						"1",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "hi"
+						}
 					]
 				}
 			},
