@@ -7,13 +7,19 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: chat-system
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
   web:
     build: .
     ports:
       - "3000:3000"
     depends_on: 
-     - db
-     - redis
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
   queue:
     image: rabbitmq:3.8-management
   redis:
